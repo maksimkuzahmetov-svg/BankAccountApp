@@ -1,2 +1,2 @@
-# BankAccountApp
-BankOperation
+# WalletApp
+WalletOperation

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: init/create-wallet-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: init/insert-wallet-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: init/add-version-to-wallet-table.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-version-column-step1
+      author: Maxim Kuzakhmetov
+      changes:
+        - addColumn:
+            tableName: wallet
+            columns:
+              - column:
+                  name: version
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    defaultValue: 0
+        - sql:
+            sql: |
+              UPDATE wallet SET version = 0;
+
+  - changeSet:
+      id: add-version-column-step2
+      author: Maxim Kuzakhmetov
+      changes:
+        - addNotNullConstraint:
+            columnName: version
+            tableName: wallet

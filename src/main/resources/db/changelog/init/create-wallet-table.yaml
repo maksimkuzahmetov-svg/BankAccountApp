@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-wallet-table
+      author: Maxim Kuzakhmetov
+      changes:
+        - createTable:
+            tableName: wallet
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_wallet_id
+              - column:
+                  name: balance
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: false

@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-uuid-ossp
+      author: Maxim Kuzakhmetov
+      changes:
+        - sql:
+            sql: |
+              CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+  - changeSet:
+      id: insert-wallet
+      author: Maxim Kuzakhmetov
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO wallet (id, balance)
+              VALUES
+                (uuid_generate_v4(), 100.00),
+                (uuid_generate_v4(), 0.00)
